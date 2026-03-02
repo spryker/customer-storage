@@ -18,9 +18,6 @@ use Spryker\Client\Kernel\AbstractFactory;
 
 class CustomerStorageFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Client\CustomerStorage\Reader\CustomerStorageReaderInterface
-     */
     public function createCustomerStorageReader(): CustomerStorageReaderInterface
     {
         return new CustomerStorageReader(
@@ -30,9 +27,6 @@ class CustomerStorageFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\CustomerStorage\Mapper\CustomerStorageMapperInterface
-     */
     public function createCustomerStorageMapper(): CustomerStorageMapperInterface
     {
         return new CustomerStorageMapper(
@@ -40,25 +34,16 @@ class CustomerStorageFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\CustomerStorage\Dependency\Client\CustomerStorageToStorageClientInterface
-     */
     public function getStorageClient(): CustomerStorageToStorageClientInterface
     {
         return $this->getProvidedDependency(CustomerStorageDependencyProvider::CLIENT_STORAGE);
     }
 
-    /**
-     * @return \Spryker\Client\CustomerStorage\Dependency\Service\CustomerStorageToUtilEncodingServiceInterface
-     */
     public function getUtilEncodingService(): CustomerStorageToUtilEncodingServiceInterface
     {
         return $this->getProvidedDependency(CustomerStorageDependencyProvider::SERVICE_UTIL_ENCODING);
     }
 
-    /**
-     * @return \Spryker\Client\CustomerStorage\Dependency\Service\CustomerStorageToSynchronizationServiceInterface
-     */
     public function getSynchronizationService(): CustomerStorageToSynchronizationServiceInterface
     {
         return $this->getProvidedDependency(CustomerStorageDependencyProvider::SERVICE_SYNCHRONIZATION);

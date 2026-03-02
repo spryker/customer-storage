@@ -129,12 +129,6 @@ class CustomerStorageRepository extends AbstractRepository implements CustomerSt
         return $customerInvalidatedStorageQuery;
     }
 
-    /**
-     * @param \Orm\Zed\CustomerStorage\Persistence\SpyCustomerInvalidatedStorageQuery $customerInvalidatedStorageQuery
-     * @param \Generated\Shared\Transfer\InvalidatedCustomerCriteriaTransfer $invalidatedCustomerCriteriaTransfer
-     *
-     * @return \Orm\Zed\CustomerStorage\Persistence\SpyCustomerInvalidatedStorageQuery
-     */
     protected function applyCustomerInvalidatedStorageFilters(
         SpyCustomerInvalidatedStorageQuery $customerInvalidatedStorageQuery,
         InvalidatedCustomerCriteriaTransfer $invalidatedCustomerCriteriaTransfer
@@ -148,12 +142,6 @@ class CustomerStorageRepository extends AbstractRepository implements CustomerSt
         return $this->buildQueryByConditions($invalidatedCustomerConditionsTransfer, $customerInvalidatedStorageQuery);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\InvalidatedCustomerConditionsTransfer $invalidatedCustomerConditionsTransfer
-     * @param \Orm\Zed\CustomerStorage\Persistence\SpyCustomerInvalidatedStorageQuery $invalidatedStorageQuery
-     *
-     * @return \Orm\Zed\CustomerStorage\Persistence\SpyCustomerInvalidatedStorageQuery
-     */
     protected function buildQueryByConditions(
         InvalidatedCustomerConditionsTransfer $invalidatedCustomerConditionsTransfer,
         SpyCustomerInvalidatedStorageQuery $invalidatedStorageQuery
@@ -165,12 +153,6 @@ class CustomerStorageRepository extends AbstractRepository implements CustomerSt
         return $invalidatedStorageQuery;
     }
 
-    /**
-     * @param \Orm\Zed\CustomerStorage\Persistence\SpyCustomerInvalidatedStorageQuery $invalidatedStorageQuery
-     * @param \Generated\Shared\Transfer\PaginationTransfer $paginationTransfer
-     *
-     * @return \Orm\Zed\CustomerStorage\Persistence\SpyCustomerInvalidatedStorageQuery
-     */
     protected function applyCustomerInvalidatedStoragePagination(
         SpyCustomerInvalidatedStorageQuery $invalidatedStorageQuery,
         PaginationTransfer $paginationTransfer

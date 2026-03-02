@@ -13,20 +13,10 @@ use Generated\Shared\Transfer\InvalidatedCustomerTransfer;
 
 interface CustomerStorageEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\InvalidatedCustomerTransfer $invalidatedCustomerTransfer
-     *
-     * @return void
-     */
     public function saveCustomerInvalidatedStorage(
         InvalidatedCustomerTransfer $invalidatedCustomerTransfer
     ): void;
 
-    /**
-     * @param \Generated\Shared\Transfer\InvalidatedCustomerCollectionDeleteCriteriaTransfer $invalidatedCustomerCollectionDeleteCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\InvalidatedCustomerCollectionTransfer
-     */
     public function deleteInvalidatedCustomerCollection(
         InvalidatedCustomerCollectionDeleteCriteriaTransfer $invalidatedCustomerCollectionDeleteCriteriaTransfer
     ): InvalidatedCustomerCollectionTransfer;

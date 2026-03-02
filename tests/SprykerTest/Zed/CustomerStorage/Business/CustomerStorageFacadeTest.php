@@ -33,9 +33,6 @@ class CustomerStorageFacadeTest extends Unit
      */
     protected CustomerStorageBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     public function setUp(): void
     {
         parent::setUp();
@@ -50,9 +47,6 @@ class CustomerStorageFacadeTest extends Unit
         $this->tester->addDependencies();
     }
 
-    /**
-     * @return void
-     */
     public function testWriteCustomerInvalidatedStorageCollectionByCustomerEvents(): void
     {
         // Arrange
@@ -73,9 +67,6 @@ class CustomerStorageFacadeTest extends Unit
         $this->assertNotNull($customerInvalidatedStorage->getPasswordUpdatedAt());
     }
 
-    /**
-     * @return void
-     */
     public function testDeleteExpiredCustomerInvalidatedStorage(): void
     {
         // Arrange
@@ -94,9 +85,6 @@ class CustomerStorageFacadeTest extends Unit
         $this->assertNull($customerInvalidatedStorage2);
     }
 
-    /**
-     * @return void
-     */
     public function testGetSynchronizationTransferCollection(): void
     {
         // Arrange

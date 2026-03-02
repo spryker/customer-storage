@@ -9,8 +9,5 @@ namespace Spryker\Zed\CustomerStorage\Business\Deleter;
 
 interface CustomerStorageDeleterInterface
 {
-    /**
-     * @return void
-     */
     public function deleteExpiredCustomerInvalidatedStorage(): void;
 }

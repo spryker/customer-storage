@@ -58,9 +58,6 @@ class CustomerStorageBusinessTester extends Actor
      */
     protected const DEFAULT_CURRENCY = 'EUR';
 
-    /**
-     * @return void
-     */
     public function addDependencies(): void
     {
         $this->setDependency(StoreDependencyProvider::PLUGINS_STORE_EXPANDER, [
@@ -68,11 +65,6 @@ class CustomerStorageBusinessTester extends Actor
         ]);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return \Generated\Shared\Transfer\InvalidatedCustomerTransfer|null
-     */
     public function findCustomerInvalidatedStorage(CustomerTransfer $customerTransfer): ?InvalidatedCustomerTransfer
     {
         $customerInvalidatedStorageEntity = SpyCustomerInvalidatedStorageQuery::create()
@@ -94,12 +86,6 @@ class CustomerStorageBusinessTester extends Actor
             );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     * @param \DateTime $createdAt
-     *
-     * @return void
-     */
     public function createCustomerInvalidatedStorage(
         CustomerTransfer $customerTransfer,
         DateTime $createdAt
@@ -112,11 +98,6 @@ class CustomerStorageBusinessTester extends Actor
         $customerInvalidatedStorageEntity->save();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return \Generated\Shared\Transfer\EventEntityTransfer
-     */
     public function createEventEntityTransfer(CustomerTransfer $customerTransfer): EventEntityTransfer
     {
         return (new EventEntityTransfer())
@@ -124,9 +105,6 @@ class CustomerStorageBusinessTester extends Actor
             ->addModifiedColumns(static::COL_PASSWORD);
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\PaginationTransfer
-     */
     public function createPaginationTransfer(): PaginationTransfer
     {
         return (new PaginationTransfer())
@@ -134,9 +112,6 @@ class CustomerStorageBusinessTester extends Actor
             ->setLimit(10);
     }
 
-    /**
-     * @return \Spryker\Client\StoreExtension\Dependency\Plugin\StoreExpanderPluginInterface
-     */
     protected function createStoreStorageStoreExpanderPluginMock(): StoreExpanderPluginInterface
     {
         $storeTransfer = (new StoreTransfer())

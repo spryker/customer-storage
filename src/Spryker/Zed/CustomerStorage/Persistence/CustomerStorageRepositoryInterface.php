@@ -13,11 +13,6 @@ use Generated\Shared\Transfer\PaginationTransfer;
 
 interface CustomerStorageRepositoryInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\InvalidatedCustomerCriteriaTransfer $invalidatedCustomerCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\InvalidatedCustomerCollectionTransfer
-     */
     public function getInvalidatedCustomerCollection(
         InvalidatedCustomerCriteriaTransfer $invalidatedCustomerCriteriaTransfer
     ): InvalidatedCustomerCollectionTransfer;

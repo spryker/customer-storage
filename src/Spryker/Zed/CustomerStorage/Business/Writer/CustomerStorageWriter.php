@@ -48,11 +48,6 @@ class CustomerStorageWriter implements CustomerStorageWriterInterface
      */
     protected CustomerStorageEntityManagerInterface $customerStorageEntityManager;
 
-    /**
-     * @param \Spryker\Zed\CustomerStorage\Business\Mapper\CustomerStorageMapperInterface $customerStorageMapper
-     * @param \Spryker\Zed\CustomerStorage\Dependency\Facade\CustomerStorageToCustomerFacadeInterface $customerFacade
-     * @param \Spryker\Zed\CustomerStorage\Persistence\CustomerStorageEntityManagerInterface $customerStorageEntityManager
-     */
     public function __construct(
         CustomerStorageMapperInterface $customerStorageMapper,
         CustomerStorageToCustomerFacadeInterface $customerFacade,
@@ -128,12 +123,6 @@ class CustomerStorageWriter implements CustomerStorageWriterInterface
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\EventEntityTransfer $eventEntityTransfer
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return \Generated\Shared\Transfer\InvalidatedCustomerTransfer
-     */
     protected function createInvalidatedCustomerTransfer(
         EventEntityTransfer $eventEntityTransfer,
         CustomerTransfer $customerTransfer
@@ -150,11 +139,6 @@ class CustomerStorageWriter implements CustomerStorageWriterInterface
             );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\EventEntityTransfer $eventEntityTransfer
-     *
-     * @return bool
-     */
     protected function isPasswordUpdated(EventEntityTransfer $eventEntityTransfer): bool
     {
         return in_array(static::COL_PASSWORD, $eventEntityTransfer->getModifiedColumns(), true);

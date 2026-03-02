@@ -49,12 +49,6 @@ class CustomerStorageMapper implements CustomerStorageMapperInterface
         return $customerCriteriaFilterTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\InvalidatedCustomerTransfer $invalidatedCustomerTransfer
-     * @param \Generated\Shared\Transfer\SynchronizationDataTransfer $synchronizationDataTransfer
-     *
-     * @return \Generated\Shared\Transfer\SynchronizationDataTransfer
-     */
     protected function mapInvalidatedCustomerTransferToSynchronizationDataTransfer(
         InvalidatedCustomerTransfer $invalidatedCustomerTransfer,
         SynchronizationDataTransfer $synchronizationDataTransfer

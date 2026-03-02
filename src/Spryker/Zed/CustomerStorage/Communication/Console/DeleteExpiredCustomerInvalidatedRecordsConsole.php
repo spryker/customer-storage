@@ -28,9 +28,6 @@ class DeleteExpiredCustomerInvalidatedRecordsConsole extends Console
      */
     protected const COMMAND_DESCRIPTION = 'Deletes all expired customer invalidated storage records.';
 
-    /**
-     * @return void
-     */
     protected function configure(): void
     {
         parent::configure();
@@ -38,12 +35,6 @@ class DeleteExpiredCustomerInvalidatedRecordsConsole extends Console
         $this->setDescription(static::COMMAND_DESCRIPTION);
     }
 
-    /**
-     * @param \Symfony\Component\Console\Input\InputInterface $input
-     * @param \Symfony\Component\Console\Output\OutputInterface $output
-     *
-     * @return int
-     */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->getFacade()->deleteExpiredCustomerInvalidatedStorage();

@@ -18,17 +18,11 @@ use Spryker\Zed\Kernel\Persistence\AbstractPersistenceFactory;
  */
 class CustomerStoragePersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Orm\Zed\CustomerStorage\Persistence\SpyCustomerInvalidatedStorageQuery
-     */
     public function createSpyCustomerInvalidatedStorageQuery(): SpyCustomerInvalidatedStorageQuery
     {
         return SpyCustomerInvalidatedStorageQuery::create();
     }
 
-    /**
-     * @return \Spryker\Zed\CustomerStorage\Persistence\Propel\Mapper\CustomerStorageMapper
-     */
     public function createCustomerStorageMapper(): CustomerStorageMapper
     {
         return new CustomerStorageMapper();

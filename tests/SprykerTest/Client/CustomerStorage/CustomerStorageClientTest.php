@@ -49,9 +49,6 @@ class CustomerStorageClientTest extends Unit
      */
     protected CustomerStorageClientTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -59,9 +56,6 @@ class CustomerStorageClientTest extends Unit
         $this->tester->addDependencies();
     }
 
-    /**
-     * @return void
-     */
     public function testGetInvalidatedCustomerCollectionReturnsInvalidatedCustomerCollectionTransfer(): void
     {
         // Arrange
@@ -76,9 +70,6 @@ class CustomerStorageClientTest extends Unit
         $this->assertCount(2, $invalidatedCustomerCollectionTransfer->getInvalidatedCustomers());
     }
 
-    /**
-     * @return void
-     */
     protected function createStorageClientMock(): void
     {
         $invalidatedCustomerTransfer1 = (new InvalidatedCustomerTransfer())

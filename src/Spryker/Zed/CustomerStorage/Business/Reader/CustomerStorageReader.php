@@ -29,11 +29,6 @@ class CustomerStorageReader implements CustomerStorageReaderInterface
      */
     protected CustomerStorageRepositoryInterface $customerStorageRepository;
 
-    /**
-     * @param \Spryker\Zed\CustomerStorage\Business\Mapper\CustomerStorageMapperInterface $customerStorageMapper
-     * @param \Spryker\Zed\CustomerStorage\Dependency\Facade\CustomerStorageToCustomerFacadeInterface $customerFacade
-     * @param \Spryker\Zed\CustomerStorage\Persistence\CustomerStorageRepositoryInterface $customerStorageRepository
-     */
     public function __construct(
         CustomerStorageMapperInterface $customerStorageMapper,
         CustomerStorageToCustomerFacadeInterface $customerFacade,

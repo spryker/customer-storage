@@ -18,9 +18,6 @@ class CustomerStorageMapper implements CustomerStorageMapperInterface
      */
     protected CustomerStorageToUtilEncodingServiceInterface $utilEncodingService;
 
-    /**
-     * @param \Spryker\Client\CustomerStorage\Dependency\Service\CustomerStorageToUtilEncodingServiceInterface $utilEncodingService
-     */
     public function __construct(
         CustomerStorageToUtilEncodingServiceInterface $utilEncodingService
     ) {

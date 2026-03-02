@@ -57,9 +57,6 @@ class CustomerStorageClientTester extends Actor
      */
     protected const CUSTOMER_REFERENCE_2 = 'TEST--2';
 
-    /**
-     * @return void
-     */
     public function addDependencies(): void
     {
         $this->setDependency(StoreDependencyProvider::PLUGINS_STORE_EXPANDER, [
@@ -67,9 +64,6 @@ class CustomerStorageClientTester extends Actor
         ]);
     }
 
-    /**
-     * @return \Spryker\Client\CustomerStorage\CustomerStorageClientInterface
-     */
     public function getCustomerStorageClient(): CustomerStorageClientInterface
     {
         return $this->getLocator()
@@ -77,9 +71,6 @@ class CustomerStorageClientTester extends Actor
             ->client();
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\InvalidatedCustomerCriteriaTransfer
-     */
     public function createInvalidatedCustomerCriteriaTransfer(): InvalidatedCustomerCriteriaTransfer
     {
         $invalidatedCustomerConditionsTransfer = (new InvalidatedCustomerConditionsTransfer())
@@ -90,9 +81,6 @@ class CustomerStorageClientTester extends Actor
             ->setInvalidatedCustomerConditions($invalidatedCustomerConditionsTransfer);
     }
 
-    /**
-     * @return \Spryker\Client\StoreExtension\Dependency\Plugin\StoreExpanderPluginInterface
-     */
     protected function createStoreStorageStoreExpanderPluginMock(): StoreExpanderPluginInterface
     {
         $storeTransfer = (new StoreTransfer())

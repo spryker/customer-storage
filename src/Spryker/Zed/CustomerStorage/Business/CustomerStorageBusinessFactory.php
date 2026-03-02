@@ -26,9 +26,6 @@ use Spryker\Zed\Kernel\Business\AbstractBusinessFactory;
  */
 class CustomerStorageBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\CustomerStorage\Business\Writer\CustomerStorageWriterInterface
-     */
     public function createCustomersStorageWriter(): CustomerStorageWriterInterface
     {
         return new CustomerStorageWriter(
@@ -38,9 +35,6 @@ class CustomerStorageBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CustomerStorage\Business\Reader\CustomerStorageReaderInterface
-     */
     public function createCustomersStorageReader(): CustomerStorageReaderInterface
     {
         return new CustomerStorageReader(
@@ -50,9 +44,6 @@ class CustomerStorageBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CustomerStorage\Business\Deleter\CustomerStorageDeleterInterface
-     */
     public function createCustomersStorageDeleter(): CustomerStorageDeleterInterface
     {
         return new CustomerStorageDeleter(
@@ -61,17 +52,11 @@ class CustomerStorageBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CustomerStorage\Business\Mapper\CustomerStorageMapperInterface
-     */
     public function createCustomersStorageMapper(): CustomerStorageMapperInterface
     {
         return new CustomerStorageMapper();
     }
 
-    /**
-     * @return \Spryker\Zed\CustomerStorage\Dependency\Facade\CustomerStorageToCustomerFacadeInterface
-     */
     public function getCustomerFacade(): CustomerStorageToCustomerFacadeInterface
     {
         return $this->getProvidedDependency(CustomerStorageDependencyProvider::FACADE_CUSTOMER);

@@ -32,11 +32,6 @@ class CustomerStorageReader implements CustomerStorageReaderInterface
      */
     protected CustomerStorageMapperInterface $customerStorageMapper;
 
-    /**
-     * @param \Spryker\Client\CustomerStorage\Dependency\Client\CustomerStorageToStorageClientInterface $storageClient
-     * @param \Spryker\Client\CustomerStorage\Dependency\Service\CustomerStorageToSynchronizationServiceInterface $synchronizationService
-     * @param \Spryker\Client\CustomerStorage\Mapper\CustomerStorageMapperInterface $customerStorageMapper
-     */
     public function __construct(
         CustomerStorageToStorageClientInterface $storageClient,
         CustomerStorageToSynchronizationServiceInterface $synchronizationService,
@@ -47,11 +42,6 @@ class CustomerStorageReader implements CustomerStorageReaderInterface
         $this->customerStorageMapper = $customerStorageMapper;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\InvalidatedCustomerCriteriaTransfer $invalidatedCustomerCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\InvalidatedCustomerCollectionTransfer
-     */
     public function getInvalidatedCustomerCollection(
         InvalidatedCustomerCriteriaTransfer $invalidatedCustomerCriteriaTransfer
     ): InvalidatedCustomerCollectionTransfer {
@@ -132,11 +122,6 @@ class CustomerStorageReader implements CustomerStorageReaderInterface
         return $keys;
     }
 
-    /**
-     * @param string $storageKey
-     *
-     * @return string
-     */
     protected function getCustomerReference(string $storageKey): string
     {
         $storageKeyArray = explode(':', $storageKey);
@@ -144,11 +129,6 @@ class CustomerStorageReader implements CustomerStorageReaderInterface
         return strtoupper(end($storageKeyArray));
     }
 
-    /**
-     * @param string $customerReference
-     *
-     * @return string
-     */
     protected function generateKey(string $customerReference): string
     {
         return $this->synchronizationService

@@ -35,10 +35,6 @@ class CustomerStorageDeleter implements CustomerStorageDeleterInterface
      */
     protected CustomerStorageConfig $customerStorageConfig;
 
-    /**
-     * @param \Spryker\Zed\CustomerStorage\Persistence\CustomerStorageEntityManagerInterface $customerStorageEntityManager
-     * @param \Spryker\Zed\CustomerStorage\CustomerStorageConfig $customerStorageConfig
-     */
     public function __construct(
         CustomerStorageEntityManagerInterface $customerStorageEntityManager,
         CustomerStorageConfig $customerStorageConfig
@@ -47,9 +43,6 @@ class CustomerStorageDeleter implements CustomerStorageDeleterInterface
         $this->customerStorageConfig = $customerStorageConfig;
     }
 
-    /**
-     * @return void
-     */
     public function deleteExpiredCustomerInvalidatedStorage(): void
     {
         do {
@@ -60,9 +53,6 @@ class CustomerStorageDeleter implements CustomerStorageDeleterInterface
         } while ($invalidatedCustomerCollectionTransfer->getInvalidatedCustomers()->count() >= $this->customerStorageConfig->getBatchSizeLimit());
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\InvalidatedCustomerCollectionTransfer
-     */
     protected function executeDeleteExpiredCustomerInvalidatedStorageTransaction(): InvalidatedCustomerCollectionTransfer
     {
         $invalidatedCustomerCollectionDeleteCriteriaTransfer = $this->createInvalidatedCustomerCollectionDeleteCriteriaTransfer(
@@ -75,9 +65,6 @@ class CustomerStorageDeleter implements CustomerStorageDeleterInterface
         );
     }
 
-    /**
-     * @return \DateTime
-     */
     protected function getCreatedAt(): DateTime
     {
         $customerInvalidatedStorageLifetimeInterval = new DateInterval(
@@ -87,12 +74,6 @@ class CustomerStorageDeleter implements CustomerStorageDeleterInterface
         return (new DateTime())->sub($customerInvalidatedStorageLifetimeInterval);
     }
 
-    /**
-     * @param \DateTime $createdAt
-     * @param \Generated\Shared\Transfer\PaginationTransfer $paginationTransfer
-     *
-     * @return \Generated\Shared\Transfer\InvalidatedCustomerCollectionDeleteCriteriaTransfer
-     */
     protected function createInvalidatedCustomerCollectionDeleteCriteriaTransfer(
         DateTime $createdAt,
         PaginationTransfer $paginationTransfer
@@ -102,9 +83,6 @@ class CustomerStorageDeleter implements CustomerStorageDeleterInterface
             ->setPagination($paginationTransfer);
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\PaginationTransfer
-     */
     protected function createPaginationTransfer(): PaginationTransfer
     {
         return (new PaginationTransfer())

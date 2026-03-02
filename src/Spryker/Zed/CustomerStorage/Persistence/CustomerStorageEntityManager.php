@@ -21,11 +21,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractEntityManager;
  */
 class CustomerStorageEntityManager extends AbstractEntityManager implements CustomerStorageEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\InvalidatedCustomerTransfer $invalidatedCustomerTransfer
-     *
-     * @return void
-     */
     public function saveCustomerInvalidatedStorage(
         InvalidatedCustomerTransfer $invalidatedCustomerTransfer
     ): void {
@@ -42,11 +37,6 @@ class CustomerStorageEntityManager extends AbstractEntityManager implements Cust
         $customerInvalidatedStorageEntity->setData($customerInvalidatedStorageData)->save();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\InvalidatedCustomerCollectionDeleteCriteriaTransfer $invalidatedCustomerCollectionDeleteCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\InvalidatedCustomerCollectionTransfer
-     */
     public function deleteInvalidatedCustomerCollection(
         InvalidatedCustomerCollectionDeleteCriteriaTransfer $invalidatedCustomerCollectionDeleteCriteriaTransfer
     ): InvalidatedCustomerCollectionTransfer {
@@ -74,12 +64,6 @@ class CustomerStorageEntityManager extends AbstractEntityManager implements Cust
             );
     }
 
-    /**
-     * @param \Orm\Zed\CustomerStorage\Persistence\SpyCustomerInvalidatedStorageQuery $customerInvalidatedStorageQuery
-     * @param \Generated\Shared\Transfer\InvalidatedCustomerCollectionDeleteCriteriaTransfer $invalidatedCustomerCollectionDeleteCriteriaTransfer
-     *
-     * @return \Orm\Zed\CustomerStorage\Persistence\SpyCustomerInvalidatedStorageQuery
-     */
     protected function applyCustomerInvalidatedStorageDeleteFilters(
         SpyCustomerInvalidatedStorageQuery $customerInvalidatedStorageQuery,
         InvalidatedCustomerCollectionDeleteCriteriaTransfer $invalidatedCustomerCollectionDeleteCriteriaTransfer
@@ -92,12 +76,6 @@ class CustomerStorageEntityManager extends AbstractEntityManager implements Cust
         return $customerInvalidatedStorageQuery;
     }
 
-    /**
-     * @param \Orm\Zed\CustomerStorage\Persistence\SpyCustomerInvalidatedStorageQuery $invalidatedStorageQuery
-     * @param \Generated\Shared\Transfer\PaginationTransfer $paginationTransfer
-     *
-     * @return \Orm\Zed\CustomerStorage\Persistence\SpyCustomerInvalidatedStorageQuery
-     */
     protected function applyCustomerInvalidatedStorageDeletePagination(
         SpyCustomerInvalidatedStorageQuery $invalidatedStorageQuery,
         PaginationTransfer $paginationTransfer
